@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: funnyahh-discord-bot
+    runtime: python
+    plan: 0.5c-512mb
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: TWITCH_CLIENT_ID
+        sync: false
+      - key: TWITCH_CLIENT_SECRET
+        sync: false
+      - key: TWITCH_CHANNEL_LOGIN
+        sync: false
+      - key: TWITCH_ANNOUNCEMENT_CHANNEL_ID
+        sync: false
